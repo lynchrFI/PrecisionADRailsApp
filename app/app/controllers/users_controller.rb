@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to @trainer
+            redirect_to @user
         else
             render :new
         end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:trainer).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password)
     end
 
     def set_user
