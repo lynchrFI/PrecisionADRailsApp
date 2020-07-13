@@ -1,0 +1,31 @@
+<%= form_with model: @client, local: true do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br> 
+    <br>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+    <br>
+    <br>
+    <%= f.label :phone_number %>
+    <%= f.number_field :phone_number %> 
+    <br>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br>
+    <br>
+    <br>
+        <%= f.fields_for :appointments do |a| %>
+
+            <%= a.hidden_field :user_id, value: current_user.id %> 
+
+            <%= a.label :appointment_time %>
+            <%= a.datetime_field :appointment_time %>
+            <br>
+            <br>
+        <% end %>
+    <%= f.submit %>
+
+    <% end %>

@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'auth/facebook', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+
+  root 'sessions#home'
+  #where a user signs up
+  get '/signup', to: 'users#new'
+  resources :users
+  #where a user logs in
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  #logout route
+  delete '/logout', to: 'sessions#destroy'
 end

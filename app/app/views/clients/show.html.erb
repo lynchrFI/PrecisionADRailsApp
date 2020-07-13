@@ -1,0 +1,23 @@
+<ul>
+<li> Name: <%= @client.name %> </li>
+<li> Age: <%= @client.age %> </li>
+<li> Phone Number: <%= @client.phone_number %> </li>
+<li> Email: <%= @client.email %> </li>
+</ul>
+<br>
+<br>
+
+<h4> <%= @client.name %>'s appointments </h4>
+
+  <ul> <% @client.appointments.each do |app| %>
+    <li> <%= link_to app.appointment_time.strftime("%A %B %e, %Y %l:%M %p"), appointment_path(app) unless app.appointment_time == nil %> </li>
+   <% end %> </ul>
+<br>
+
+<%= button_to "Add an Appointment", new_client_appointment_path(@client), method: :get %>
+<br>
+
+<%= button_to "Edit Client", edit_client_path(@client), method: :get %>
+<br>
+
+<%= button_to "Delete Client", client_path(@client), method: :delete %>

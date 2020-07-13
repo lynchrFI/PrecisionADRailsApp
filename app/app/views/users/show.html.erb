@@ -1,17 +1,7 @@
-<%= form_for @user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <br>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <br>
-    <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br> 
-    <br>
+<h2> Welcome, <%= @user.name %> </h2>
 
-    <%= f.submit %>
-
-    <% end %>
+<p> Your info: </p>
+  <p> Name: <%= @user.name %> </p>
+    <br>
+  <p> Email: <%= @user.email %> </p>  
+    <br>
