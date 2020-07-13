@@ -1,0 +1,13 @@
+<h1> <%= current_user.name %>'s Vehicles </h1>
+
+<%= form_tag search_path, method: 'get' do %>
+    <%= label_tag "Search by name" %>
+    <%= text_field_tag :name, params[:name] %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<ul>
+<% @vehicles.all.uniq.each do |v| %>
+    <li> <%= link_to v.name, vehicle_path(v) %> </li>
+<% end %>
+</ul>
