@@ -2,10 +2,6 @@
 
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <br> 
-    <br>
-    <%= f.label :age %>
-    <%= f.number_field :age %>
     <br>
     <br>
     <%= f.label :phone_number %>
@@ -16,6 +12,16 @@
     <%= f.text_field :email %>
     <br>
     <br>
+    <%= f.label :vehicle_year %>
+    <%= f.number_field :vehicle_year %>
+    <br>
+    <br>
+    <%= f.label :make %>
+    <%= f.text_field :make%>
+    <br>
+    <br>
+    <%= f.label :model%>
+    <%= f.text_field :model %>
     <br>
         <%= f.fields_for :appointments do |a| %>
 

@@ -1,7 +1,8 @@
 <ul>
 <li> Name: <%= @client.name %> </li>
-<li> Age: <%= @client.age %> </li>
+<br>
 <li> Phone Number: <%= @client.phone_number %> </li>
+<br>
 <li> Email: <%= @client.email %> </li>
 </ul>
 <br>
@@ -21,3 +22,6 @@
 <br>
 
 <%= button_to "Delete Client", client_path(@client), method: :delete %>
+<br>
+
+

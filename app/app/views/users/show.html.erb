@@ -5,3 +5,12 @@
     <br>
   <p> Email: <%= @user.email %> </p>  
     <br>
+
+    <br>
+    <br>
+
+    <%= link_to "See all your clients!", user_clients_path(@user) %> <br>
+    <%= link_to "Add a new client here!", new_user_client_path(@user) %> <br>
+    <% if @user.provider == nil %>
+    <%= link_to "Edit your profile here!", edit_user_path(@user) %> <br>
+    <% end %>

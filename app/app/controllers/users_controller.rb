@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :verified_user
-    skip_before_action :verified_user, only: [:new, :create]
+    skip_before_action :verified_user, only: [:new, :create, :show]
+    before_action :set_user, only: [:show, :edit, :update]
 
     def index
         @users = User.all 

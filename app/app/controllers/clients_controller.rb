@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+    before_action :set_client, only: [:show, :edit, :update, :destroy]
 
     def index 
         if current_user.id == params[:user_id].to_i

@@ -1,5 +1,5 @@
-class AppointmentsController < ActionController::Base
- 
+class AppointmentsController < ApplicationController 
+    before_action :set_appointment, only: [:show, :edit, :update, :destroy]
     def index 
         @appointments = Appointment.all
     end
